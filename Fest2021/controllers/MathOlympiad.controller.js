@@ -66,8 +66,23 @@ const postMO = (req,res) => {
 }
 
 const getMOList = (req,res) => {
-    res.render('math-olympiad/list.ejs')
-}
+    let all_participant = [];
+    let error = "";
+    MathOlympiad.find().then((data) => {
+        all_participant = data
+        res.render('math-olympiad/list.ejs', {
+            error:req.flash('error'),
+            participants: all_participant,
+        });
+
+    }).catch(() => {
+        error = "Failed to fetch data!"
+        res.render('math-olympiad/list.ejs', {
+            error: req.flash('error', error),
+            participants: all_participant,
+        });
+    });
+};
 const deleteMO = (req,res) => {
     const id = req.params.id
     console.log(id)

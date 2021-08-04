@@ -14,7 +14,12 @@
             </div>
             <div class="x_content">
                 <br />
-
+                <% let success = 'Participant has been registered successfully!!' %>
+                <%if(error.length>0){if(error==success){%>
+                <div class="alert alert-success"><%=error%></div>
+                <%}else{%>
+                <div class="alert alert-danger"><%=error%></div>
+                <%}%> <%}%>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
@@ -26,17 +31,19 @@
                                 <thead>
                                     <tr>
                                         <!-- <th>Name</th>-->
+                                        <th>ID</th>
+                                        <th>Name</th>
                                         <th>Category</th>
-                                        <th>Contact<br /> No.</th>
+                                        <th>Contact No.</th>
                                         <th>E-mail</th>
-                                        <th>Institute</th>
+                                        <th>Institution</th>
                                         <th>T-Shirt</th>
                                         <th>Total</th>
                                         <th>Paid</th>
                                         <th>Selected</th>
-                                        <th>Payment<br /> Status</th>
+                                        <th>Payment Status</th>
                                         <th>Select</th>
-                                        <th>Payment<br /> Done</th>
+                                        <th>Payment Done</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
