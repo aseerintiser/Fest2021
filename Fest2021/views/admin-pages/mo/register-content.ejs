@@ -20,8 +20,14 @@
                     </div>
                     <div class="x_content">
                         <br />
+                        <% let success = 'Participant has been registered successfully!!' %>
+                        <%if(error.length>0){if(error==success){%>
+                        <div class="alert alert-success"><%=error%></div>
+                        <%}else{%>
+                        <div class="alert alert-danger"><%=error%></div>
+                        <%}%> <%}%>
                         <form method="POST" action="/MathOlympiad/register" id="demo-form2" data-parsley-validate
-                            class="form-horizontal form-label-left" @@ -45,108 +44,98 @@>
+                            class="form-horizontal form-label-left" >
                             <div class="item form-group">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Name <span
                                         class="required">*</span>
