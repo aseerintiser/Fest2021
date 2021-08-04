@@ -15,7 +15,8 @@
             <div class="x_content">
                 <br />
                 <% let success = 'Data has been deleted successfully!' %>
-                <%if(error.length>0){if(error==success){%>
+                <% let success2 = 'Payment completed succesfully!' %>
+                <% if (error.length>0) {if (error==success || success2){%>
                 <div class="alert alert-success"><%=error%></div>
                 <%}else{%>
                 <div class="alert alert-danger"><%=error%></div>
@@ -81,7 +82,7 @@
                                                 <%if(participant.paid==participant.total){%>
                                                     <p style="color: green;">Successful</p>
                                                     <%}else{%>
-                                                        <p style="color: brown;">Incomplete</p>
+                                                        <p style="color: red;">Incomplete</p>
                                                         <%}%>
                                             </td>
                                             <td>Select</td>
