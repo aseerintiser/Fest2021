@@ -44,7 +44,9 @@ app.use(express.urlencoded({ extended: false }));
 //Routes
 const indexRoutes = require("./routes/index.routes");
 const userRoutes = require("./routes/users.routes");
+const MORoutes = require('./routes/mathOlympiad.routes')
 app.use(indexRoutes);
 app.use("/users", userRoutes);
+app.use("/MathOlympiad", MORoutes); 
 
 module.exports = app;
