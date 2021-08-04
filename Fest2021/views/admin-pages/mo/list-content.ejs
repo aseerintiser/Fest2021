@@ -77,7 +77,11 @@
                                                 <%=participant.paid%>
                                             </td>
                                             <td>
-                                                <%participant.selected%>
+                                                <%if(participant.selected==true){%>
+                                                    <p style="color: green;">Yes</p>
+                                                    <%}else{%>
+                                                        <p style="color: red;">No</p>
+                                                        <%}%>
                                             </td>
                                             <td>
                                                 <%if(participant.paid==participant.total){%>
