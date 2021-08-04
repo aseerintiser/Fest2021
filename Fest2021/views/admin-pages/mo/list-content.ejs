@@ -39,9 +39,9 @@
                                         <th>Total</th>
                                         <th>Paid</th>
                                         <th>Selected</th>
-                                        <th>Payment Status</th>
+                                        <th>Payment<br />Status</th>
                                         <th>Select</th>
-                                        <th>Payment Done</th>
+                                        <th>Payment<br />Done</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -85,7 +85,10 @@
                                                         <%}%>
                                             </td>
                                             <td>Select</td>
-                                            <td>Payment Done</td>
+                                            <td>
+                                                <% const paymentDoneURL='paymentDone/' + participant._id %>
+                                                    <a href="<%= paymentDoneURL %>"><i class="fa fa-money"></i><span class="fa fa-chevron"></span></a>
+                                            </td>
                                             <td>Edit</td>
                                             <td>
                                                 <% const deleteURL='delete/' + participant._id %>
