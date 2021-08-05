@@ -165,7 +165,7 @@ const getEditMO = (req, res) => {
       })
       .catch((e) => {
         console.log(e);
-        error = "Participant details cpuld not be fetched!";
+        error = "Participant details could not be fetched!";
         res.render("math-olympiad/editParticipant.ejs", {
           error: req.flash("error", error),
           participant: info,
@@ -174,17 +174,25 @@ const getEditMO = (req, res) => {
   };
 
   const editMO = async (req, res) => {
+    const id = req.params.id;
     const { name, category, contact, email, institution, tshirt } = req.body;
     //console.log(req.body);
   
-    const data = await MathOlympiad.findOneAndUpdate(
-      { name: name, contact: contact },
-      { category, email, institution, tshirt }
-    );
-    if (data) {
-      //console.log("findOneAndUpdate ", data);
-      res.redirect("/MathOlympiad/list");
-    }
+    let error = "";
+
+    MathOlympiad.findOneAndUpdate(
+      { _id: id }, 
+      { name, category, contact, email, institution, tshirt })
+      .then((data) => {
+        error = "Update infromation successful!";
+            req.flash("error", error);
+            res.redirect("/MathOlympiad/list");
+      })
+      .catch((e) => {
+        console.log(e);
+        error = "Update information failed!";
+        res.redirect("/MathOlympiad/list");
+      });
   };
 
 module.exports = { getMO, postMO, getMOList, deleteMO, paymentDoneMO, selectMO, editMO, getEditMO };

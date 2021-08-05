@@ -9,13 +9,14 @@
                             Math Olympiad<br /><small>Edit Participant's Information</small>
                         </h2>
 
-                        <% if (error.length>0) {%>
-                            <div class="alert alert-danger">
-                                <%=error%>
-                            </div>
-                            <%}%> %>
+                        <% let success='Participant has been updated successfully!' %>
+                        <% if (error.length>0) {if (error==success){%>
+                            <div class="alert alert-success"><%=error%></div>
+                            <%}else{%>
+                            <div class="alert alert-danger"><%=error%></div>
+                            <%}%> <%}%>
 
-                                <form method="POST" action="/MathOlympiad/editParticipant" id="demo-form2"
+                                <form method="POST" action="/MathOlympiad/editParticipant/<%=participant._id%>" id="demo-form2"
                                     data-parsley-validate class="form-horizontal form-label-left">
                                     <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Id
