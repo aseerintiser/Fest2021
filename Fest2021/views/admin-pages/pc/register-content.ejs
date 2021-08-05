@@ -13,30 +13,30 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <form method="POST" action="/MathOlympiad/register" id="demo-form2" data-parsley-validate
+                        <form method="POST" action="/ProgContest/register" id="demo-form2" data-parsley-validate
                             class="form-horizontal form-label-left">
                             <div class="row">
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Team Name" class="form-control">
+                                    <input type="text" placeholder="Team Name" id="teamname" name="teamname" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Institution Name" class="form-control">
+                                    <input type="text" placeholder="Institution Name" id="institution" name="institution" required="required" class="form-control">
                                 </div>
                             </div>
                             <h2>Information Regarding the Coach</h2>
                             <div class="row">
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Name of the Coach" class="form-control">
+                                    <input type="text" placeholder="Name of the Coach" id="coachname" name="coachname" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Contact No. of the Coach" class="form-control">
+                                    <input type="text" placeholder="Contact No. of the Coach" id="coachcontact" name="coachcontact" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="E-mail of the Coach" class="form-control">
+                                    <input type="text" placeholder="E-mail of the Coach" id="coachmail" name="coachmail" required="required" class="form-control">
                                 </div>
                                 <label class="col-form-label"><b>T-Shirt Size of the Coach</b></label><br/>
                                 <div class="col-md-4 col-sm-12  form-group"><br/>
-                                    <select class="form-control" id="tshirt" name="tshirt">
+                                    <select class="form-control" id="coachtshirt" name="coachtshirt" required="required">
                                         <option>--- Choose Option ---</option>
                                         <option value="M">Medium</option>
                                         <option value="L">Large</option>
@@ -49,18 +49,17 @@
                             <h2>Information Regarding the Team Leader</h2>
                             <div class="row">
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Name of the Team Leader" class="form-control">
+                                    <input type="text" placeholder="Name of the Team Leader" id="leadername" name="leadername" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Contact No. of the Team Leader"
-                                        class="form-control">
+                                    <input type="text" placeholder="Contact No. of the Team Leader" id="leadercontact" name="leadercontact" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="E-mail of the Team Leader" class="form-control">
+                                    <input type="text" placeholder="E-mail of the Team Leader" id="leadermail" name="leadermail" required="required" class="form-control">
                                 </div>
                                 <label class="col-form-label"><b>T-Shirt Size of the Team Leader</b></label><br />
                                 <div class="col-md-4 col-sm-12  form-group"><br />
-                                    <select class="form-control" id="tshirt" name="tshirt">
+                                    <select class="form-control" id="leadertshirt" name="leadertshirt" required="required">
                                         <option>--- Choose Option ---</option>
                                         <option value="M">Medium</option>
                                         <option value="L">Large</option>
@@ -73,17 +72,17 @@
                             <h2>Information Regarding Member - 1</h2>
                             <div class="row">
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Name of Member - 1" class="form-control">
+                                    <input type="text" placeholder="Name of Member - 1" id="member1name" name="member1name" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Contact No. of Member - 1" class="form-control">
+                                    <input type="text" placeholder="Contact No. of Member - 1" id="member1contact" name="member1contact" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="E-mail of Member - 1" class="form-control">
+                                    <input type="text" placeholder="E-mail of Member - 1" id="member1mail" name="member1mail" required="required" class="form-control">
                                 </div>
                                 <label class="col-form-label"><b>T-Shirt Size of Member - 1</b></label><br />
                                 <div class="col-md-4 col-sm-12  form-group"><br />
-                                    <select class="form-control" id="tshirt" name="tshirt">
+                                    <select class="form-control" id="member1tshirt" name="member1tshirt" required="required">
                                         <option>--- Choose Option ---</option>
                                         <option value="M">Medium</option>
                                         <option value="L">Large</option>
@@ -96,17 +95,17 @@
                             <h2>Information Regarding Member - 2</h2>
                             <div class="row">
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Name of Member - 2" class="form-control">
+                                    <input type="text" placeholder="Name of Member - 2" id="member2name" name="member2name" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="Contact No. of Member - 2" class="form-control">
+                                    <input type="text" placeholder="Contact No. of Member - 2" id="member2contact" name="member2contact" required="required" class="form-control">
                                 </div>
                                 <div class="col-md-4 col-sm-12  form-group">
-                                    <input type="text" placeholder="E-mail of Member - 2" class="form-control">
+                                    <input type="text" placeholder="E-mail of Member - 2" id="member2mail" name="member2mail" required="required" class="form-control">
                                 </div>
                                 <label class="col-form-label"><b>T-Shirt Size of Member - 2</b></label><br />
                                 <div class="col-md-4 col-sm-12  form-group"><br />
-                                    <select class="form-control" id="tshirt" name="tshirt">
+                                    <select class="form-control" id="member2tshirt" name="member2tshirt" required="required">
                                         <option>--- Choose Option ---</option>
                                         <option value="M">Medium</option>
                                         <option value="L">Large</option>

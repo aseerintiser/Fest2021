@@ -7,9 +7,11 @@ const {
 } = require("./../middlewares/auth.middleware");
 
 const { 
-    getPC 
+    getPC,
+    postPC,
 } = require('../controllers/progContest.controller');
 
 router.get("/register", ensureAuthenticated, addUserData, getPC);
+router.post("/register", ensureAuthenticated, addUserData, postPC);
 
 module.exports = router;
