@@ -45,7 +45,7 @@ const postPC = (req, res) => {
   console.log(member2mail);
   console.log(member2tshirt);
 
-  let registrationFee = 0;
+  let registrationFee = 500;
 
   const total = registrationFee;
   const paid = 0;
@@ -135,4 +135,29 @@ const deletePC = (req, res) => {
       });
   };
 
-module.exports = { getPC, postPC, getPCList, deletePC };
+const paymentDonePC = (req, res) => {
+    const id = req.params.id;
+
+    ProgContest.findOne({ _id: id })
+      .then((team) => {
+        team.paid = team.total;
+        team
+          .save()
+          .then(() => {
+            let error = "Team payment completed succesfully!";
+            req.flash("error", error);
+            res.redirect("/ProgContest/list");
+          })
+          .catch(() => {
+            let error = "Team data could not be updated!";
+            req.flash("error", error);
+            res.redirect("/ProgContest/list");
+          });
+      })
+      .catch(() => {
+        let error = "Team data could not be updated!";
+        req.flash("error", error);
+        res.redirect("/ProgContest/list");
+      });
+  };
+module.exports = { getPC, postPC, getPCList, deletePC, paymentDonePC };

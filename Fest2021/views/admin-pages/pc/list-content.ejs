@@ -14,7 +14,8 @@
             <div class="x_content">
                 <br />
                 <% let success='Team data has been deleted successfully!' %>
-                <% if (error.length>0) {if(error==success){%>
+                <% let success2='Team payment completed succesfully!' %>
+                <% if (error.length>0) {if((error==success) || (error==success2)){%>
                 <div class="alert alert-success"><%=error%></div>
                 <%}else{%>
                 <div class="alert alert-danger"><%=error%></div>
