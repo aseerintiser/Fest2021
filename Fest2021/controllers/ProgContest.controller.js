@@ -160,4 +160,31 @@ const paymentDonePC = (req, res) => {
         res.redirect("/ProgContest/list");
       });
   };
-module.exports = { getPC, postPC, getPCList, deletePC, paymentDonePC };
+
+  const selectPC = (req, res) => {
+    const id = req.params.id;
+
+    ProgContest.findOne({ _id: id })
+      .then((team) => {
+        team.selected = true;
+        team
+          .save()
+          .then(() => {
+            let error = "Team has been selected succesfully!";
+            req.flash("error", error);
+            res.redirect("/ProgContest/list");
+          })
+          .catch(() => {
+            let error = "Team data could not be updated";
+            req.flash("error", error);
+            res.redirect("/ProgContest/list");
+          });
+      })
+      .catch(() => {
+        let error = "Team data could not be updated";
+        req.flash("error", error);
+        res.redirect("/ProgContest/list");
+      });
+  };
+
+module.exports = { getPC, postPC, getPCList, deletePC, paymentDonePC, selectPC };
