@@ -1,0 +1,187 @@
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Programming Contest<br /> <small>Edit Team's Infromation</small></h2>
+                    </div>
+
+                    <% let success='Team has been updated successfully!' %>
+                        <% if (error.length>0) {if (error==success){%>
+                            <div class="alert alert-success"><%=error%></div>
+                            <%}else{%>
+                            <div class="alert alert-danger"><%=error%></div>
+                            <%}%> <%}%>
+
+                                        <div class="x_content">
+                                            <form method="POST" action="/ProgContest/editTeam/<%=team._id%>"
+                                                id="demo-form2" data-parsley-validate
+                                                class="form-horizontal form-label-left">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Team Name: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Team Name"
+                                                            value="<%=team.teamname%>" id="teamname" name="teamname"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Institution Name: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Institution Name"
+                                                            value="<%=team.institution%>" id="institution" name="institution"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <h2>Information Regarding the Coach</h2>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Name of the Coach: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Name of the Coach"
+                                                            value="<%=team.coachname%>" id="coachname" name="coachname"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Contact No. of the Coach: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Contact No. of the Coach"
+                                                            value="<%=team.coachcontact%>" id="coachcontact"
+                                                            name="coachcontact" required="required"
+                                                            class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>E-mail of the Coach: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="E-mail of the Coach"
+                                                            value="<%=team.coachmail%>" id="coachmail" name="coachmail"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                    <label class="col-form-label"><b>T-Shirt Size of the Coach</b></label><br>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <select class="form-control" value="<%=team.coachtshirt%>"
+                                                            id="coachtshirt" name="coachtshirt" required="required">
+                                                            <option value="<%=team.coachtshirt%>""><%=team.coachtshirt%></option>
+                                                            <option value=" M">Medium</option>
+                                                            <option value="L">Large</option>
+                                                            <option value="XL">Extra Large</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <h2>Information Regarding the Team Leader</h2>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Name of the Team Leader: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Name of the Team Leader"
+                                                            value="<%=team.leadername%>" id="leadername"
+                                                            name="leadername" required="required" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Contact No. of the Team Leader: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Contact No. of the Team Leader"
+                                                            value="<%=team.leadercontact%>" id="leadercontact"
+                                                            name="leadercontact" required="required"
+                                                            class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>E-mail of the Team Leader: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="E-mail of the Team Leader"
+                                                            value="<%=team.leadermail%>" id="leadermail"
+                                                            name="leadermail" required="required" class="form-control">
+                                                    </div>
+                                                    <label class="col-form-label"><b>T-Shirt Size of the Team Leader</b></label><br>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <select class="form-control" value="<%=team.leadertshirt%>"
+                                                            id="leadertshirt" name="leadertshirt" required="required">
+                                                            <option value="<%=team.leadertshirt%>">
+                                                                <%=team.leadertshirt%>
+                                                            </option>
+                                                            <option value="M">Medium</option>
+                                                            <option value="L">Large</option>
+                                                            <option value="XL">Extra Large</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <br />
+                                                <h2>Information Regarding Member - 1</h2>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Name of Member - 1: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Name of Member - 1"
+                                                            value="<%=team.member1name%>" id="member1name" name="member1name"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Contact No. of Member - 1: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Contact No. of Member - 1"
+                                                            value="<%=team.member1contact%>" id="member1contact"
+                                                            name="member1contact" required="required" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>E-mail of Member - 1: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="E-mail of Member - 1"
+                                                            value="<%=team.member1mail%>" id="member1mail" name="member1mail"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                    <label class="col-form-label"><b>T-Shirt Size of Member - 1</b></label><br>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <select class="form-control" id="member1tshirt" name="member1tshirt"
+                                                            required="required">
+                                                            <option value="<%=team.member1tshirt%>">
+                                                                <%=team.member1tshirt%>
+                                                            </option>
+                                                            <option value="M">Medium</option>
+                                                            <option value="L">Large</option>
+                                                            <option value="XL">Extra Large</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <br />
+                                                <h2>Information Regarding Member - 2</h2>
+                                                <div class="row">
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Name of Member - 2: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Name of Member - 2"
+                                                            value="<%=team.member2name%>" id="member2name" name="member2name"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>Contact No. of Member - 2: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="Contact No. of Member - 2"
+                                                            value="<%=team.member2contact%>" id="member2contact"
+                                                            name="member2contact" required="required" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"><b>E-mail of Member - 2: </b><span class="required"></span></label>
+                                                        <input type="text" placeholder="E-mail of Member - 2"
+                                                            value="<%=team.member2mail%>" id="member2mail" name="member2mail"
+                                                            required="required" class="form-control">
+                                                    </div>
+                                                    <label class="col-form-label"><b>T-Shirt Size of Member - 2</b></label><br>
+                                                    <div class="col-md-4 col-sm-12  form-group">
+                                                        <select class="form-control" id="member2tshirt" name="member2tshirt"
+                                                            required="required">
+                                                            <option value="<%=team.member2tshirt%>">
+                                                                <%=team.member2tshirt%>
+                                                            </option>
+                                                            <option value="M">Medium</option>
+                                                            <option value="L">Large</option>
+                                                            <option value="XL">Extra Large</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ln_solid"></div>
+                                                <div class="item form-group">
+                                                    <div class="col-md-6 col-sm-6 offset-md-3">
+                                                        <button class="btn btn-primary" type="reset">Reset</button>
+                                                        <button type="submit" class="btn btn-success">Update</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

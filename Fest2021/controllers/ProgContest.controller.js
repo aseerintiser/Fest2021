@@ -187,4 +187,84 @@ const paymentDonePC = (req, res) => {
       });
   };
 
-module.exports = { getPC, postPC, getPCList, deletePC, paymentDonePC, selectPC };
+  const getEditPC = (req, res) => {
+    const id = req.params.id;
+
+    let info = [];
+    let error = "";
+    ProgContest.findOne({ _id: id })
+      .then((data) => {
+        info = data;
+        res.render("prog-contest/edit-team.ejs", {
+          error: req.flash("error"),
+          team: info,
+        });
+      })
+      .catch((e) => {
+        console.log(e);
+        error = "Team details could not be fetched!";
+        res.render("prog-contest/edit-team.ejs", {
+          error: req.flash("error", error),
+          team: info,
+        });
+      });
+  };
+
+  const editPC = async (req, res) => {
+    const id = req.params.id;
+    const { 
+        teamname,
+        institution,
+        coachname,
+        coachcontact,
+        coachmail,
+        coachtshirt,
+        leadername,
+        leadercontact,
+        leadermail,
+        leadertshirt,
+        member1name,
+        member1contact,
+        member1mail,
+        member1tshirt,
+        member2name,
+        member2contact,
+        member2mail,
+        member2tshirt } = req.body;
+    //console.log(req.body);
+
+    let error = "";
+
+    ProgContest.findOneAndUpdate(
+      { _id: id }, 
+      { teamname,
+        institution,
+        coachname,
+        coachcontact,
+        coachmail,
+        coachtshirt,
+        leadername,
+        leadercontact,
+        leadermail,
+        leadertshirt,
+        member1name,
+        member1contact,
+        member1mail,
+        member1tshirt,
+        member2name,
+        member2contact,
+        member2mail,
+        member2tshirt })
+      .then((data) => {
+        error = "Update team infromation successful!";
+            req.flash("error", error);
+            res.redirect("/ProgContest/list");
+      })
+      .catch((e) => {
+        console.log(e);
+        error = "Update team information failed!";
+        res.redirect("/ProgContest/list");
+      });
+  };
+
+module.exports = { getPC, postPC, getPCList, deletePC, paymentDonePC, selectPC, editPC, getEditPC };
