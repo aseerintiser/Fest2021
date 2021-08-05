@@ -51,10 +51,11 @@
                                 <tbody>
                                     <%if(participants.length>0){
                                         participants.forEach(participant=>{%>
-                                        <tr>
-                                            <td>
-                                                <%=participant.name%>
-                                            </td>
+                                        <tr contenteditable="true">
+                                            <%let participantInfo=[]%>
+                                                <td>
+                                                    <%=participant.name%>
+                                                </td>
                                             <td>
                                                 <%=participant.category%>
                                             </td>
@@ -99,7 +100,7 @@
                                                     <a href="<%= paymentDoneURL %>"><i class="fa fa-money"></i><span class="fa fa-chevron"></span></a>
                                             </td>
                                             <td>
-                                                <% const editURL='edit/' + participant._id %>
+                                                <% const editURL='editParticipant/' +participant._id %>
                                                     <a href="<%= editURL%>"><i class="fa fa-pencil"></i><span class="fa fa-chevron"></span></a>
                                             </td>
                                             <td>

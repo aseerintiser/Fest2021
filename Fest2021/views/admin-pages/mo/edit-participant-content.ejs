@@ -1,0 +1,116 @@
+<div class="right_col" role="main">
+    <div class="">
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>
+                            Math Olympiad<br /><small>Edit Participant's Information</small>
+                        </h2>
+
+                        <% if (error.length>0) {%>
+                            <div class="alert alert-danger">
+                                <%=error%>
+                            </div>
+                            <%}%> %>
+
+                                <form method="POST" action="/MathOlympiad/editParticipant" id="demo-form2"
+                                    data-parsley-validate class="form-horizontal form-label-left">
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">Id
+                                            <span class="required"></span>
+                                        </label>
+
+                                        <div class="col-md-6 col-sm-6">
+                                            <label id="id" name="id">
+                                                <%=participant._id%>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                            for="first-name">Name <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" id="name" name="name" required="required"
+                                                class="form-control" value="<%=participant.name%>" />
+                                        </div>
+                                    </div>
+
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                            for="first-name">Contact No.<span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" id="contact" name="contact" required="required"
+                                                class="form-control" value="<%=participant.contact%>" />
+                                        </div>
+                                    </div>
+
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                            for="first-name">E-mail
+                                        </label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="email" id="email" name="email" class="form-control"
+                                                value="<%=participant.email%>" />
+                                        </div>
+                                    </div>
+
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                            for="first-name">Institution<span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="text" id="institution" name="institution" required="required"
+                                                class="form-control" value="<%=participant.institution%>" />
+                                        </div>
+                                    </div>
+
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                            for="first-name">Category<span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <select class="form-control" id="category" name="category">
+                                                <option value="<%=participant.category%>">
+                                                    <%=participant.category%>
+                                                </option>
+                                                <option value="School">School</option>
+                                                <option value="College">College</option>
+                                                <option value="University">University</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align"
+                                            for="first-name">T-Shirt<span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-6 col-sm-6">
+                                            <select class="form-control" id="tshirt" name="tshirt">
+                                                <option value="<%=participant.tshirt%>">
+                                                    <%=participant.tshirt%>
+                                                </option>
+                                                <option value="M">Medium</option>
+                                                <option value="L">Large</option>
+                                                <option value="XL">Extra Large</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="ln_solid"></div>
+                                    <div class="item form-group">
+                                        <div class="col-md-6 col-sm-6 offset-md-3">
+                                            <button class="btn btn-primary" type="reset">Reset</button>
+                                            <button type="submit" class="btn btn-success">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
