@@ -41,6 +41,11 @@ const mathOlympiadSchema = new mongoose.Schema({
       type:Date,
       default:Date.now,
   },
+  verificationCode: {
+    type: String,
+    required: true,
+    unique: true,
+  },
 
 });
 

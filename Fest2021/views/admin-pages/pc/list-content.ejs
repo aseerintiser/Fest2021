@@ -54,6 +54,7 @@
                                         <th>Payment<br />Done</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
+                                        <th>Verification<br />Code</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -150,6 +151,9 @@
                                             <td>
                                                 <% const deleteURL='delete/' + team._id %>
                                                     <a href="<%= deleteURL%>"><i class="fa fa-trash"></i><span class="fa fa-chevron"></span></a>
+                                            </td>
+                                            <td>
+                                                <%= participant.verificationCode%>
                                             </td>
                                         </tr>
                                         <% }) }%>
