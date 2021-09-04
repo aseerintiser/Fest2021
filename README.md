@@ -1,5 +1,5 @@
 # Fest 2021
-This is a project I have worked in throughout my Server Programmming Lab course.
+This is a project I have worked in throughout my Server Programming Lab course.
 
 I have implemented authentication, CRUD operations in this project using node, express, mongodb and passportjs.
 
